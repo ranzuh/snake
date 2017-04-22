@@ -1,7 +1,7 @@
 # snake
 
-Classing snake game written in C using ncurses library. It was made for a programming class.
-Try to catch the Apple by changing snakes direction using WASD-keys. If you catch the Apple you're snake grows longer. 
+Classic snake game written in C using ncurses library. It was made for a programming class.
+Try to eat the Apple by changing snakes direction using WASD-keys. If you eat the Apple you're snake grows longer. 
 Don't hit the walls haha...
 
 
