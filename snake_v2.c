@@ -65,7 +65,11 @@ void moveSnake(int *snakeArray, int dirX, int dirY, int speed, int snakeLength) 
     mvprintw(newY, newX, "S");
   }
 
-  usleep(100000 * speed);
+  if (dirY != 0) {
+    usleep(1000000/speed);
+  }
+
+  usleep(1000000/speed);
 }
 
 void letThereBeApple(int* appleX, int* appleY, int *appleEaten) {
@@ -79,7 +83,6 @@ void letThereBeApple(int* appleX, int* appleY, int *appleEaten) {
   }
 
   mvprintw(*appleY, *appleX,"A");
-
 }
 
 void eatApple(int *snakeArray, int appleX, int appleY,
@@ -98,8 +101,7 @@ void eatApple(int *snakeArray, int appleX, int appleY,
     *(snakeArray + snakeLen*2+1) = lastY;
   }
 
-  mvprintw(0,0,"snakeLength: %d, snakeX: %d, snakeY: %d, appleX: %d, appleY: %d",
-           *snakeLength, x, y, appleX, appleY);
+  mvprintw(0,0,"snakeLength: %d", *snakeLength);
 }
 
 int main() {
@@ -110,7 +112,7 @@ int main() {
   int keyPressed = 0;   /* which key user pressed */
   int dirX = 1;        /* direction xy */
   int dirY = 0;
-  int speed = 1;        /* controls speed of the game, higher values make slower */
+  int speed = 20;       /* controls speed of the snake */
   int appleX = 0;       /* current apple xy position */
   int appleY = 0;
   int appleEaten = 1;   /* is apple eaten? */
@@ -119,6 +121,7 @@ int main() {
   initscr();			/* Start curses mode */
   curs_set(false);
   noecho();
+
 
   /* MAIN LOOP */
   while (!colliding(&snakeArray[0][0])) {
@@ -155,7 +158,9 @@ int main() {
 
 
   }
-  mvprintw(12,30,"game over!");
+  erase();
+  mvprintw(MAXHEIGHT/2,MAXWIDTH/4,"Game Over! - Your score was: %d", snakeLength);
+  refresh();
 	getch();			/* Wait for user input */
 	endwin();			/* End curses mode		  */
 
