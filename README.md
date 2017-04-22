@@ -1,3 +1,3 @@
 # snake
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/adk_jzfPVnA" frameborder="0" allowfullscreen></iframe>
+[![ScreenShot](http://img.youtube.com/vi/adk_jzfPVnA/0.jpg)](https://youtu.be/adk_jzfPVnA)
