@@ -7,3 +7,10 @@ Game ends if you hit the walls or if the snake hits itself. Try to get as long a
 Click the image below to see a demo video
 
 [![ScreenShot](http://img.youtube.com/vi/adk_jzfPVnA/0.jpg)](https://youtu.be/adk_jzfPVnA)
+
+# compiling
+
+On mac: 
+```
+gcc snake_v3.c -o snake -lncurses
+```
