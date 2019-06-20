@@ -10,7 +10,20 @@ Click the image below to see a demo video
 
 # compiling
 
-On mac: 
+Mac:
+
+Mac OS should have ncurses headers already so this should work:
+```
+gcc snake_v3.c -o snake -lncurses
+```
+
+Linux:
+
+If your linux distro does not have the headers you need to get them first:
+```
+sudo apt-get install libncurses5-dev
+```
+Then you should be able to compile with:
 ```
 gcc snake_v3.c -o snake -lncurses
 ```
