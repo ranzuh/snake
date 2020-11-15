@@ -27,3 +27,10 @@ Then you should be able to compile with:
 ```
 gcc snake_v3.c -o snake -lncurses
 ```
+
+# run the game
+After compiling you can run the game with
+```
+./snake
+```
+
